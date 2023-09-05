@@ -1,20 +1,14 @@
 name: Publish Docker image
 
 on:
-  push:
-    branches:
-      - master
+  push: { branches: [master] }
+  workflow_dispatch:
 
 jobs:
   push_to_registry:
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-
-    env:
-      DOCKER_REGISTRY: ghcr.io
-
+    permissions: { packages: write, contents: read }
+    env: { DOCKER_REGISTRY: ghcr.io }
     steps:
       - uses: actions/checkout@v2
 

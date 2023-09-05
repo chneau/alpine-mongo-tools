@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "start": "npm run build && npm run push",
+    "build": "docker build -t ghcr.io/chneau/alpine-mongo-tools .",
+    "push": "docker push ghcr.io/chneau/alpine-mongo-tools"
+  }
+}
